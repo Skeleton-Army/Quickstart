@@ -10,7 +10,7 @@ import com.skeletonarmy.marrow.LynxUtil;
 
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
-@Autonomous(name="Autonomous", preselectTeleOp="TeleOpApp")
+@Autonomous(name="Autonomous", preselectTeleOp="TeleOp")
 public class AutonomousApp extends CommandOpMode {
     private Follower follower;
 
