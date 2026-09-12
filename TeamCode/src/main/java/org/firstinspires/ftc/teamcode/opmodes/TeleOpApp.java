@@ -19,7 +19,7 @@ public class TeleOpApp extends CommandOpMode {
         LynxUtil.setBulkCachingMode(hardwareMap, LynxModule.BulkCachingMode.MANUAL);
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
-        follower = Constants.create(hardwareMap);
+        follower = Constants.createWithoutReset(hardwareMap);
     }
 
     @Override
