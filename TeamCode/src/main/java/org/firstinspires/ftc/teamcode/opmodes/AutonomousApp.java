@@ -16,7 +16,7 @@ public class AutonomousApp extends CommandOpMode {
 
     @Override
     public void initialize() {
-        LynxUtil.setBulkCachingMode(hardwareMap, LynxModule.BulkCachingMode.AUTO);
+        LynxUtil.setBulkCachingMode(hardwareMap, LynxModule.BulkCachingMode.MANUAL);
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
         follower = Constants.create(hardwareMap);
@@ -24,6 +24,8 @@ public class AutonomousApp extends CommandOpMode {
 
     @Override
     public void run() {
+        LynxUtil.clearBulkCache(hardwareMap);
+
         follower.update();
     }
 }
