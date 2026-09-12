@@ -1,3 +1,5 @@
+apply plugin: 'com.android.application'
+
 //
 // build.gradle in TeamCode
 //
@@ -7,7 +9,6 @@
 // the build definitions, you can place those customizations in this file, but
 // please think carefully as to whether such customizations are really necessary
 // before doing so.
-
 
 // Custom definitions may go here
 
@@ -61,4 +62,20 @@ dependencies {
 
     implementation "org.psilynx.psikit:core:0.2.0"
     implementation "org.psilynx.psikit:ftc:0.2.0"
+}
+
+tasks.register('adbDisconnect', Exec) {
+    group = 'verification'
+    description = 'Disconnects all active wireless ADB connections'
+
+    def adbExe = android.getAdbExecutable().absolutePath;
+    commandLine adbExe, 'disconnect'
+
+    ignoreExitValue = true
+}
+
+afterEvaluate {
+    tasks.named('deploySloth').configure {
+        finalizedBy('adbDisconnect')
+    }
 }
