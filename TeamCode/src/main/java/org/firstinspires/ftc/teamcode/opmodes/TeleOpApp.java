@@ -20,7 +20,6 @@ public class TeleOpApp extends CommandOpMode {
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
         follower = Constants.create(hardwareMap);
-        follower.startTeleOpDrive(true);
     }
 
     @Override
