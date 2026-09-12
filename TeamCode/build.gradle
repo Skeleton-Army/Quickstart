@@ -12,8 +12,21 @@
 // Custom definitions may go here
 
 // Include common definitions from above.
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://repo.dairy.foundation/releases"
+        }
+    }
+    dependencies {
+        classpath "dev.frozenmilk:Load:0.3.0"
+    }
+}
+
 apply from: '../build.common.gradle'
 apply from: '../build.dependencies.gradle'
+apply plugin: 'dev.frozenmilk.sinister.sloth.load'
 
 android {
     namespace = 'org.firstinspires.ftc.teamcode'
@@ -32,20 +45,20 @@ repositories {
 dependencies {
     implementation project(':FtcRobotController')
 
-    implementation "org.solverslib:core:0.3.4"
-    implementation "org.solverslib:pedroPathing:0.3.4"
+    implementation "org.solverslib:core:0.3.5"
+    implementation "org.solverslib:pedroPathing:0.3.5"
 
-    implementation "com.skeletonarmyftc.marrow:core:1.1.0"
+    implementation "com.skeletonarmyftc.marrow:core:1.1.2"
 
-    implementation "com.pedropathing:ftc:2.1.2"
-    implementation "com.pedropathing:telemetry:1.0.0"
-    implementation "com.bylazar:fullpanels:1.0.12"
+    implementation "com.pedropathing:revhub:3.0.0"
+    implementation "com.pedropathing:tuning:1.0.0"
 
-    implementation "dev.frozenmilk.sinister:Sloth:0.2.4"
-    implementation "com.acmerobotics.slothboard:dashboard:0.2.4+0.5.1"
+    implementation "dev.frozenmilk.sinister:Sloth:0.3.0"
+    implementation "com.acmerobotics.slothboard:dashboard:0.3.0+0.5.1"
+    implementation "com.bylazar.sloth:fullpanels:0.3.0+1.0.12"
 
     implementation "page.j5155.AdvantageScope:lite:v26.0.0"
 
-    implementation "org.psilynx.psikit:core:0.2.0-beta1"
-    implementation "org.psilynx.psikit:ftc:0.2.0-beta1"
+    implementation "org.psilynx.psikit:core:0.2.0"
+    implementation "org.psilynx.psikit:ftc:0.2.0"
 }

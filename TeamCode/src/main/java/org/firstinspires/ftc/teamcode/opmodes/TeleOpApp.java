@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.seattlesolvers.solverslib.command.CommandOpMode;
 import com.skeletonarmy.marrow.LynxUtil;
 
-import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
+import org.firstinspires.ftc.teamcode.pedro.Constants;
 
 @TeleOp(name="TeleOp")
 public class TeleOpApp extends CommandOpMode {
@@ -19,7 +19,7 @@ public class TeleOpApp extends CommandOpMode {
         LynxUtil.setBulkCachingMode(hardwareMap, LynxModule.BulkCachingMode.AUTO);
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
-        follower = Constants.createFollower(hardwareMap);
+        follower = Constants.create(hardwareMap);
         follower.startTeleOpDrive(true);
     }
 
