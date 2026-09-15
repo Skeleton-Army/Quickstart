@@ -24,6 +24,7 @@ public class TeleOpApp extends CommandOpMode {
 
     @Override
     public void run() {
+        super.run();
         LynxUtil.clearBulkCache(hardwareMap);
 
         follower.manual(
