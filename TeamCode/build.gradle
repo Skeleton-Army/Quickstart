@@ -22,7 +22,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "dev.frozenmilk:Load:0.3.1"
+        classpath "dev.frozenmilk:Load:0.3.2"
     }
 }
 
@@ -54,8 +54,8 @@ dependencies {
     implementation "com.pedropathing:revhub:3.0.0"
     implementation "com.pedropathing:tuning:1.0.0"
 
-    implementation "dev.frozenmilk.sinister:Sloth:0.3.1"
-    implementation "com.acmerobotics.slothboard:dashboard:0.3.1+0.6.0"
+    implementation "dev.frozenmilk.sinister:Sloth:0.3.2"
+    implementation "com.acmerobotics.slothboard:dashboard:0.3.2+0.6.0"
 
     implementation "page.j5155.AdvantageScope:lite:v26.0.0"
 
